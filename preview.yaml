@@ -18,8 +18,6 @@ spec:
           tag: "{{.IMAGE_TAG}}"
         ingress:
           host: "{{.APP_ID}}.idcix.net"
-        imagePullSecrets:
-          name: regcred
       version: v3
   destination:
     namespace: "{{.APP_ID}}"
