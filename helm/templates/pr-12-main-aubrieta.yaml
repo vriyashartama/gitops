@@ -1,0 +1,30 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+  name: pr-12-main-aubrieta
+  namespace: argocd
+spec:
+  destination:
+    namespace: pr-12-main-aubrieta
+    server: https://kubernetes.default.svc
+  project: previews
+  source:
+    helm:
+      values: |
+        image:
+          tag: "e8e4905090a2d19e8fdc545625abd072e4c524d4"
+        ingress:
+          host: "pr-12-main-aubrieta.idcix.net"
+      version: v3
+    path: helm
+    repoURL: https://github.com/liehart/aubrieta.git
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
