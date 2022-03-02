@@ -15,7 +15,7 @@ spec:
     helm:
       values: |
         image:
-          tag: "e8e4905090a2d19e8fdc545625abd072e4c524d4"
+          tag: "84970ce6e9e505db8ce3beda4b05c26731eeee8a"
         ingress:
           host: "pr-12-main-aubrieta.idcix.net"
       version: v3
