@@ -16,7 +16,7 @@ spec:
         image:
           tag: "{{.IMAGE_TAG}}"
         ingress:
-          host: "{{.HOSTNAME}}"
+          host: "{{.IMAGE_TAG}}-{{.REPO}}-pr-preview.idcix.net"
       version: v3
   destination:
     namespace: "{{.APP_ID}}"
