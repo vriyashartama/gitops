@@ -14,10 +14,13 @@ spec:
     helm:
       values: |
         image:
+          repository: registry.idcix.net/idcix/{{.REPO}}
           tag: "{{.IMAGE_TAG}}"
         ingress:
           host: "{{.APP_ID}}.idcix.net"
       version: v3
+  imagePullSecrets:
+  - name: regcred
   destination:
     namespace: "{{.APP_ID}}"
     server: https://kubernetes.default.svc
