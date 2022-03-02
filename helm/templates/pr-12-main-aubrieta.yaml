@@ -22,8 +22,8 @@ spec:
         imagePullSecrets:
           name: regcred
       version: v3
-    path: helm
-    repoURL: https://github.com/liehart/aubrieta.git
+    path: aubrieta
+    repoURL: https://github.com/liehart/helm-chart.git
     targetRevision: HEAD
   syncPolicy:
     automated:
