@@ -19,7 +19,7 @@ spec:
         ingress:
           host: "{{.APP_ID}}.idcix.net"
         imagePullSecrets:
-        - name: regcred
+          name: regcred
       version: v3
   destination:
     namespace: "{{.APP_ID}}"
