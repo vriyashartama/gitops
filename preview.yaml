@@ -9,14 +9,14 @@ spec:
   project: previews
   source:
     path: helm
-    repoURL: https://github.com/liehart/{{.REPO}}.git
+    repoURL: https://github.com/liehart/{{.APP_ID}}.git
     targetRevision: HEAD
     helm:
       values: |
         image:
           tag: "{{.IMAGE_TAG}}"
         ingress:
-          host: "{{.IMAGE_TAG}}-{{.REPO}}-pr-preview.idcix.net"
+          host: "{{.IMAGE_TAG}}-{{.APP_ID}}-pr-preview.idcix.net"
       version: v3
   destination:
     namespace: "{{.APP_ID}}"
