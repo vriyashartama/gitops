@@ -10,12 +10,15 @@ spec:
   destination:
     namespace: pr-12-main-aubrieta
     server: https://kubernetes.default.svc
+  imagePullSecrets:
+  - name: regcred
   project: previews
   source:
     helm:
       values: |
         image:
-          tag: "84970ce6e9e505db8ce3beda4b05c26731eeee8a"
+          repository: registry.idcix.net/idcix/aubrieta
+          tag: "72d713718825b6d129e7fb0866bdb8e80dfb428a"
         ingress:
           host: "pr-12-main-aubrieta.idcix.net"
       version: v3
