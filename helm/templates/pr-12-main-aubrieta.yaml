@@ -20,7 +20,7 @@ spec:
         ingress:
           host: "pr-12-main-aubrieta.idcix.net"
         imagePullSecrets:
-          - name: regcred
+          name: regcred
       version: v3
     path: aubrieta
     repoURL: https://github.com/liehart/helm-chart.git
