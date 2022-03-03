@@ -8,13 +8,13 @@ metadata:
 spec:
   project: previews
   source:
-    path: {{.REPO}}
-    repoURL: https://github.com/liehart/helm-chart.git
+    path: "{{.REPO}}"
+    repoURL: "https://github.com/liehart/helm-chart.git"
     targetRevision: HEAD
     helm:
       values: |
         image:
-          repository: registry.idcix.net/idcix/{{.REPO}}
+          repository: "registry.idcix.net/idcix/{{.REPO}}"
           tag: "{{.IMAGE_TAG}}"
         ingress:
           host: "{{.APP_ID}}.idcix.net"
