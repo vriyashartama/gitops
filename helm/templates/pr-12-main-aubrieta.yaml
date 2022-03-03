@@ -1,0 +1,31 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+  name: pr-12-main-aubrieta
+  namespace: argocd
+spec:
+  destination:
+    namespace: pr-12-main-aubrieta
+    server: https://kubernetes.default.svc
+  project: previews
+  source:
+    helm:
+      values: |
+        image:
+          repository: "registry.idcix.net/idcix/aubrieta"
+          tag: "7029b00d8b5d080209bfa17fe177b5511a5e951a"
+        ingress:
+          host: "pr-12-main-aubrieta.idcix.net"
+      version: v3
+    path: aubrieta
+    repoURL: https://github.com/liehart/helm-chart.git
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
