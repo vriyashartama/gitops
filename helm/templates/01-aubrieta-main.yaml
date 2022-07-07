@@ -14,7 +14,7 @@ spec:
     helm:
       values: |
         image:
-          repository: "https://registry.pipeline.dev.vriyas.com/private/aubrieta"
+          repository: "registry.pipeline.dev.vriyas.com/private/aubrieta"
           tag: "latest"
         ingress:
           host: "aubrieta.pipeline.dev.vriyas.com"
