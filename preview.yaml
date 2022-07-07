@@ -14,12 +14,10 @@ spec:
     helm:
       values: |
         image:
-          repository: "registry.idcix.net/idcix/{{.REPO}}"
+          repository: "https://registry.pipeline.dev.vriyas.com/private/{{.REPO}}"
           tag: "{{.IMAGE_TAG}}"
         ingress:
-          host: "{{.APP_ID}}.idcix.net"
-        imagePullSecrets:
-          name: regcred
+          host: "{{.APP_ID}}.pipeline.dev.vriyas.com"
       version: v3
   destination:
     namespace: "{{.APP_ID}}"
