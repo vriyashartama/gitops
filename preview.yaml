@@ -14,7 +14,7 @@ spec:
     helm:
       values: |
         image:
-          repository: "https://registry.pipeline.dev.vriyas.com/private/{{.REPO}}"
+          repository: "registry.pipeline.dev.vriyas.com/private/{{.REPO}}"
           tag: "{{.IMAGE_TAG}}"
         ingress:
           host: "{{.APP_ID}}.pipeline.dev.vriyas.com"
