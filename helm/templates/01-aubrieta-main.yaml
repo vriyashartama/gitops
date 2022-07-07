@@ -8,7 +8,7 @@ metadata:
 spec:
   project: previews
   source:
-    path: "{{.REPO}}"
+    path: "aubrieta"
     repoURL: "https://github.com/liehart/helm-chart.git"
     targetRevision: HEAD
     helm:
