@@ -15,7 +15,7 @@ spec:
       values: |
         image:
           repository: "registry.pipeline.dev.vriyas.com/private/image-compress"
-          tag: "fee61170ce05153b7660a9756d9ce53495d15b6e"
+          tag: "1a490b75ffa660610714539e73dc6ae517153c82"
         ingress:
           host: "image-compress-staging.pipeline.dev.vriyas.com"
       version: v3
