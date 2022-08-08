@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: "image-compress"
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: previews
+  source:
+    path: "image-compress"
+    repoURL: "https://github.com/liehart/helm-chart.git"
+    targetRevision: HEAD
+    helm:
+      values: |
+        image:
+          repository: "registry.pipeline.dev.vriyas.com/private/image-compress"
+          tag: "6d40821bf002be6bda69cb68aad6907c20efc0c9"
+        ingress:
+          host: "image-compress.pipeline.dev.vriyas.com"
+      version: v3
+  destination:
+    namespace: "image-compress"
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+    syncOptions:
+    - CreateNamespace=true
